@@ -524,9 +524,8 @@ export default class Utils {
     static showLoading(params) {
         let {headless, connecting, onCancel, onReconnect} = params;
 
-        const styles = Utils.getStyles()
-        Utils.applyStyles(styles);
-        const topColor =  [styles.appsGradientOffset, "px,"].join('');
+        const styles = Utils.getStyles();
+        const topColor = [styles.appsGradientOffset, "px,"].join('');
         const mainColor = [styles.appsGradientTop, "px,"].join('');
 
         let bg = document.createElement("div");
@@ -668,7 +667,7 @@ export default class Utils {
         bg.appendChild(loadContainer);
 
         if (InitParams['show_loader']) {
-            console.log(InitParams['show_loader'])
+            Utils.applyStyles(styles);
             document.body.appendChild(bg);
         }
     }
